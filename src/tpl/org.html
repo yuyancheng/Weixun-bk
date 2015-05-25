@@ -1,0 +1,89 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="AbnTestController">
+  <div class="row">
+    <div class="col-xs-3">
+      <div class="panel-heading pull-left">
+        <a ui-sref="app.org_add" class="btn btn-success btn-sm"><i class="fa fa-fw m-r-xs fa-plus"></i>添加组织</a>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h2 class="org-title text-center">组织架构</h2>
+    </div>
+    <div class="col-xs-3">
+      <div class="panel-heading pull-right">
+        <button ng-click="try_adding_a_branch()" class="btn btn-primary btn-sm"><i class="fa fa-fw m-r-xs fa-pencil"></i>编辑组织</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="wrapper-md">
+            <div class="b-a bg-light dk r r-2x">
+              <span ng-if="doing_async">...loading...</span>
+              <abn-tree
+              tree-data         = "my_data"
+              tree-control      = "my_tree"
+              on-select         = "my_tree_handler(branch)"
+              expand-level      = "2"
+              initial-selection = "Granny Smith"
+              icon-leaf         = "fa fa-file-o"
+              icon-expand       = "fa fa-plus"
+              icon-collapse     = "fa fa-minus"
+              >
+              </abn-tree>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="wrapper-md">
+            <div class="table-responsive">
+              <table ui-jq="dataTable" ui-options="{
+                sAjaxSource: 'api/data.json',
+                aoColumns: [
+                { mData: 'code' },
+                { mData: 'name' },
+                { mData: 'fullname' },
+                { mData: 'abbr' },
+                { mData: 'super' },
+                { mData: 'fax' },
+                { mData: 'tel' },
+                { mData: 'time' },
+                { mData: 'location' },
+                { mData: 'postcode' },
+                { mData: 'etablishedTime' },
+                { mData: 'founder' },
+                { mData: 'foundedTime' }
+                ]
+                }" class="table table-striped b-t b-b">
+                <thead>
+                  <tr>
+                    <th>编码</th>
+                    <th>名称</th>
+                    <th>组织长名称</th>
+                    <th>简称</th>
+                    <th>上级组织</th>
+                    <th>传真</th>
+                    <th>电话</th>
+                    <th>上下班时间</th>
+                    <th>定位地址</th>
+                    <th>邮编</th>
+                    <th>成立日期</th>
+                    <th>创建人</th>
+                    <th>创建时间</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

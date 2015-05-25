@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+  <head>
+    <meta charset="utf-8" />
+    <title>测试</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="../bower_components/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/font.css" type="text/css" />
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+  </head>
+  <body ng-controller="AppCtrl">
+    <!-- 当 href 包含一个 {{expression}}时总是使用 ng-href -->
+    <a ng-href="{{ myHref }}">I'm feeling lucky, when I load</a><br/>
+    <a href="{{ myHref }}">I'm feeling 404</a>
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Angular -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- App -->
+    <script>
+        angular.module('app', []).run(function($rootScope, $timeout) {
+        $timeout(function() {
+            $rootScope.myHref = 'http://baidu.com';
+        }, 5000);
+        }).controller('AppCtrl', ['$scope', function($scope){
+            
+        }]);
+
+    </script>
+
+    <!-- Lazy loading -->
+  </body>
+</html>

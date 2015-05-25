@@ -1,0 +1,84 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+  app.settings.asideFolded = false;
+  app.settings.asideDock = false;
+  ">
+  <!-- main -->
+  <div class="col">
+    <!-- main header -->
+
+    <!-- / main header -->
+    <div class="wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <!-- stats -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row row-sm text-center">
+            <div class="col-xs-6">
+              <div class="panel padder-v item">
+                <div class="h1 text-info font-thin h1">人事管理</div>
+                <span class="text-muted text-xs">2015/05/22</span>
+                <div class="top text-right w-full">
+                  <i class="fa fa-caret-down text-warning m-r-sm"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <a href class="block panel padder-v bg-primary item">
+              <span class="text-white font-thin h1 block">假期管理</span>
+              <span class="text-muted text-xs">2015/05/22</span>
+              <span class="bottom text-right w-full">
+              <i class="fa fa-cloud-upload text-muted m-r-sm"></i>
+              </span>
+              </a>
+            </div>
+            <div class="col-xs-6">
+              <a href class="block panel padder-v bg-info item">
+              <span class="text-white font-thin h1 block">薪资管理</span>
+              <span class="text-muted text-xs">2015/05/22</span>
+              <span class="top text-left">
+              <i class="fa fa-caret-up text-warning m-l-sm"></i>
+              </span>
+              </a>
+            </div>
+            <div class="col-xs-6">
+              <a href class="block panel padder-v bg-info item">
+              <span class="text-warning font-thin h1 block">工作计划</span>
+              <span class="text-muted text-xs">2015/05/22</span>
+              <span class="top text-left">
+              <i class="fa fa-caret-up text-warning m-l-sm"></i>
+              </span>
+              </a>
+            </div>
+            <div class="col-xs-12 m-b-md">
+              <div class="r bg-light dker item hbox no-border">
+                <div class="col w-xs v-middle hidden-md">
+                  <div ng-init="data1=[60,40]" ui-jq="sparkline" ui-options="{{data1}}, {type:'pie', height:40, sliceColors:['{{app.color.warning}}','#fff']}" class="sparkline inline"></div>
+                </div>
+                <a href class="block panel padder-v bg-info item">
+                <span class="text-primary-dk font-thin h1 block">系统模块管理</span>
+                <span class="text-muted text-xs">（需要管理员权限）</span>
+                <span class="top text-left">
+                <i class="fa fa-caret-up text-warning m-l-sm"></i>
+                </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- / stats -->
+      <!-- service -->
+
+      <!-- / service -->
+      <!-- tasks -->
+
+      <!-- / tasks -->
+      <!-- tasks -->
+
+      <!-- / tasks -->
+    </div>
+  </div>
+  <!-- / main -->
+  <!-- right col -->
+
+  <!-- / right col -->
+</div>

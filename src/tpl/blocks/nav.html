@@ -1,0 +1,50 @@
+<!-- list -->
+<ul class="nav">
+
+  <li ng-repeat="A in app.ui.items" class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span ng-bind="A.type"></span>
+  </li>
+  <li ng-repeat="A in app.ui.items">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+      <span class="font-bold">工作管理</span>
+    </a>
+    <ul ng-init="B = A.items" class="nav nav-sub dk">
+      <li ng-repeat="item in B" class="nav-sub-header">
+        <a href>
+          <span ng-bind="item.type"></span>
+        </a>
+      </li>     
+      <li ng-repeat="item in B" ui-sref-active="active">
+        <a ui-sref="{{item.route}}">
+          <b class="label bg-info pull-right">N</b>
+          <span ng-bind="item.name"></span>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="line dk hidden-folded"></li>
+
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">          
+    <span translate="aside.nav.your_stuff.YOUR_STUFF">Your Stuff</span>
+  </li>  
+  <li>
+    <a ui-sref="app.page.profile">
+      <i class="icon-user icon text-success-lter"></i>
+      <b class="badge bg-success pull-right">70%</b>
+      <span translate="aside.nav.your_stuff.PROFILE">Profile</span>
+    </a>
+  </li>
+  <li>
+    <a ui-sref="app.docs">
+      <i class="icon-question icon"></i>
+      <span translate="aside.nav.your_stuff.DOCUMENTS">Documents</span>
+    </a>
+  </li>
+</ul>
+<!-- / list -->
